@@ -8,8 +8,10 @@
 </head>
 <body>
     <?php
+        require 'conexao.php';
         include_once 'pedaco.php';
     ?>
+
 
     <h2>LISTA DE LIVROS DISPONÍVEIS</h2>
     <div class="container">
@@ -25,6 +27,30 @@
                 </tr>
             </thead>
             <tbody>
+
+
+            <?php        
+                $sql = "SELECT * FROM livros";
+                $stmt = $pdo->query($sql);
+                while ($livro = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                    echo "<tr>";
+                    echo "<th scope='row'>".$livro['id']."</th>";
+                    echo "<td>".$livro['titulo']."</td>";
+                    echo "<td>".$livro['genero']."</td>";
+                    echo "<td>".$livro['autor']."</td>";
+                    echo "<td>".$livro['ano']."</td>";
+                    echo "<td>".$livro['paginas']."</td>";
+                    echo "</tr>";
+                }
+            ?>
+
+
+
+
+
+
+
                 <tr>
                     <th scope="row">1</th>
                     <td>DOM CASMURRO</td>
