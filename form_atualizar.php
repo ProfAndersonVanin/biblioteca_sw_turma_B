@@ -23,12 +23,17 @@
             $sql = "SELECT * FROM livros WHERE id = $id";
             $stmt = $pdo->query($sql);
             while ($livros = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                echo "<div class='mb-3'>                
+                        <input type='text' value='".$livros['titulo']."' name='titulo' class='form-control'>                
+                      </div>
+                ";
                 
-                echo "Titulo: " . $livros['titulo'] . "<br>";
-                echo "Genero:" . $livros['genero'] . "<br>";
-                echo "Autor: " . $livros['autor'] . "<br>";
-                echo "Ano: " . $livros['ano'] . "<br>";
-                echo "Páginas: " . $livros['paginas'] . "<br><br>";
+                // echo "Titulo: " . $livros['titulo'] . "<br>";
+                // echo "Genero:" . $livros['genero'] . "<br>";
+                // echo "Autor: " . $livros['autor'] . "<br>";
+                // echo "Ano: " . $livros['ano'] . "<br>";
+                // echo "Páginas: " . $livros['paginas'] . "<br><br>";
             }
         ?>
 
@@ -37,13 +42,7 @@
 
 
             <div class="mb-3">                
-                <input type="text" value=
-                "
-                <?php
-                    echo $livros['titulo'];
-                ?>
-                "
-                 name="titulo" class="form-control">                
+                <input type="text" value="" name="titulo" class="form-control">                
             </div>
             <div class="mb-3">                
                 <input name="genero" type="text" class="form-control">                
