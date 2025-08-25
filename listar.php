@@ -24,6 +24,7 @@
                     <th scope="col">AUTOR</th>
                     <th scope="col">ANO</th>
                     <th scope="col">PÁGINAS</th>
+                    <th scope="col">OPÇÕES</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,40 +42,18 @@
                     echo "<td>".$livro['autor']."</td>";
                     echo "<td>".$livro['ano']."</td>";
                     echo "<td>".$livro['paginas']."</td>";
+                    echo "
+                    <td>
+                        <div class='btn-group' role='group'>
+                            <a href='form_atualizar.php?id=".$livro['id']."' type='button' class='btn btn-primary'>Atualizar</a>
+                            <a href='#' type='button' class='btn btn-danger'>Apagar</a>        
+                        </div>
+                    </td>
+                    ";
                     echo "</tr>";
                 }
-            ?>
-
-
-
-
-
-
-
-                <tr>
-                    <th scope="row">1</th>
-                    <td>DOM CASMURRO</td>
-                    <td>ROMANCE</td>
-                    <td>MACHADO DE ASSIS</td>
-                    <td>1900</td>
-                    <td>338</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>DOM CASMURRO</td>
-                    <td>ROMANCE</td>
-                    <td>MACHADO DE ASSIS</td>
-                    <td>1900</td>
-                    <td>338</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>DOM CASMURRO</td>
-                    <td>ROMANCE</td>
-                    <td>MACHADO DE ASSIS</td>
-                    <td>1900</td>
-                    <td>338</td>
-                </tr>
+            ?>                
+                
             </tbody>
         </table>
         <a href="index.php" type="button" class="btn btn-primary">Voltar</a>
